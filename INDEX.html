@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MID Cloth Factory</title>
+  <link rel="icon" type="image/png" href="favicon-32x32.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9f9;
+    }
+    .navbar-brand {
+      font-weight: bold;
+    }
+    .section-title {
+      margin-top: 60px;
+      margin-bottom: 30px;
+      font-weight: 600;
+    }
+    .footer {
+      background-color: #f8f9fa;
+      padding: 20px 0;
+    }
+    .product-card img {
+      height: 200px;
+      object-fit: cover;
+    }
+    .card {
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    }
+    .contact-card, .feedback-card, .review-card {
+      background-color: #ffffff;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+      padding: 30px;
+      margin-top: 20px;
+    }
+    .contact-info p {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+    .form-control {
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    .btn-success {
+      border-radius: 8px;
+      padding: 10px 20px;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+    .btn-success:hover {
+      background-color: #218838;
+    }
+    .review-card {
+      margin-bottom: 20px;
+    }
+    .product-card:hover {
+  transform: scale(1.03);
+  transition: transform 0.3s ease;
+}
+
+.product-card img:hover {
+  opacity: 0.9;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+}
+
+  /* carosel buttton */
+  .carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: black;
+  border-radius: 50%;
+  padding: 15px;
+  background-size: 70%;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: invert(1); /* Makes arrow white on black background */
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: auto;
+}
+
+  /* fooert colou */
+  .footer {
+  background-color: #201f1f; /* Black background */
+  color: #fef6f6;            /* White text */
+  padding: 20px 0;
+}
+
+  #home {
+  background: linear-gradient(to right, #ffffff, #f5f9fc);
+  border-radius: 15px;
+  padding: 30px 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  margin-top: 30px;
+}
+
+#home h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2a2a2a;
+}
+
+#home p {
+  font-size: 1.2rem;
+  color: #555;
+  max-width: 800px;
+  margin: 20px auto 0;
+}
+
+#home:hover {
+  transform: scale(1.01);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.08);
+}
+
+#about {
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 60px 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  margin-top: 30px;
+  transition: all 0.3s ease;
+}
+
+#about:hover {
+  transform: scale(1.01);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.08);
+}
+
+#about h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #212529;
+}
+
+#about p {
+  font-size: 1.1rem;
+  color: #444;
+  max-width: 850px;
+  margin: 20px auto 0;
+  line-height: 1.8;
+}
+
+.feedback-section {
+  border: 2px solid #f3f8f6; /* Bootstrap's success green */
+  border-radius: 15px;
+  padding: 30px;
+  background-color: #ffffff;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+}
+
+
+/* Search Bar Style */
+#productSearch {
+  width: 250px;
+  padding: 10px 15px;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  margin-left: auto;
+  margin-right: 15px;
+  transition: all 0.3s ease;
+}
+
+/* Focus Effect */
+#productSearch:focus {
+  border-color: #28a745; /* Bootstrap success color */
+  box-shadow: 0 0 5px rgba(40, 167, 69, 0.5);
+}
+
+/* Adjust the search bar within navbar */
+.navbar .form-control {
+  max-width: 300px;
+  width: 100%;
+  padding: 10px;
+}
+
+/* Hover effect on the search input */
+#productSearch:hover {
+  border-color: #218838;
+}
+
+/* Small devices adjustment */
+@media (max-width: 767px) {
+  #productSearch {
+    width: 200px;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <header class="bg-success text-white py-4">
+    <div class="container d-flex align-items-center justify-content-center">
+      <img src="hoddie.jpg" alt="Cloth Factory Logo" style="width: 60px; height: auto; margin-right: 15px; border-radius: 10px;" />
+      <div class="text-center">
+        <h1 class="mb-0">MID Cloth Factory</h1>
+        <p class="mb-0">Quality textiles since 2005</p>
+      </div>
+    </div>
+  </header>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Cloth Factory</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#products">Our Products</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="#reviews">Reviews</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="#feedback">Feedback</a></li>
+        </ul>
+        <input id="productSearch" class="form-control me-2" type="search" placeholder="Search products..." />
+        
+      </div>
+    </div>
+  </nav>
+
+  <section id="home" class="container text-center py-5">
+    <h2 class="section-title">Welcome to Our Cloth Factory</h2>
+    <p>Discover premium quality fabrics and trendy designs. We provide exceptional products and customer satisfaction.</p>
+  </section>
+  <br>
+  
+  <!-- carousel -->
+  <div id="homeCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+
+  <div id="homeCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="fotter0.jpg" class="d-block w-100" alt="Clothing Banner 1" style="max-height: 450px; object-fit: cover;">
+      </div>
+      <div class="carousel-item">
+        <img src="footer.jpg" class="d-block w-100" alt="Clothing Banner 2" style="max-height: 400px; object-fit: cover;">
+      </div>
+      <div class="carousel-item">
+        <img src="footer2.jpg" class="d-block w-100" alt="Clothing Banner 3" style="max-height: 400px; object-fit: cover;">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#homeCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#homeCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    </button>
+  </div>
+  
+      <!-- Product Cards (same as before) -->
+       
+       <!-- Products Section -->
+<section id="products" class="container py-5">
+    <h2 class="section-title text-center">Our Products</h2>
+    <div class="row g-4" id="productList">
+      <!-- Product 1 -->
+      <div class="col-md-4 product-item">
+        <div class="card product-card">   
+          <a href="tshirt.html"><img src="classic t shirt 2.jpg" class="card-img-top" alt="T-Shirt" /></a>
+          <div class="card-body text-center">
+            <h5 class="card-title">Classic T-Shirt</h5>
+            <p class="card-text">Comfortable cotton T-shirt in various sizes and colors.</p>
+            <button class="btn btn-success">Buy Now</button>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Product 2 -->
+      <div class="col-md-4 product-item">
+        <div class="card product-card">
+          <a href="denimjeans.html"><img src="denim jeans2.webp" class="card-img-top" alt="Denim Jeans" /></a>
+          <div class="card-body text-center">
+            <h5 class="card-title">Denim Jeans</h5>
+            <p class="card-text">Durable and stylish jeans for all occasions.</p>
+            <button class="btn btn-success">Buy Now</button>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Product 3 -->
+      <div class="col-md-4 product-item">
+        <div class="card product-card">
+          <a href="winter jacket.html"> <img src="winter jacket2.jpg" class="card-img-top" alt="Jacket" /></a>
+          <div class="card-body text-center">
+            <h5 class="card-title">Winter Jacket</h5>
+            <p class="card-text">Warm and trendy winter jacket to keep you cozy.</p>
+            <button class="btn btn-success">Buy Now</button>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Product 4 -->
+      <div class="col-md-4 product-item">
+        <div class="card product-card">
+         <a href="style hoddie.html"> <img src="hoodie2.avif" class="card-img-top" alt="Hoodie" /></a>
+          <div class="card-body text-center">
+            <h5 class="card-title">Stylish Hoodie</h5>
+            <p class="card-text">Soft and comfortable hoodie for casual wear.</p>
+            <button class="btn btn-success">Buy Now</button>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Product 5 -->
+      <div class="col-md-4 product-item">
+        <div class="card product-card">
+         <a href="shirts.html"> <img src="shirt2.jpg" class="card-img-top" alt="Formal Shirt" /></a>
+          <div class="card-body text-center">
+            <h5 class="card-title">Shirt</h5>
+            <p class="card-text">For A Perfect Outfits Shirts Like Formals, Casuals, Printeds and More.</p>
+            <button class="btn btn-success">Buy Now</button>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Product 6 -->
+      <div class="col-md-4 product-item">
+        <div class="card product-card">
+          <a href="kurta.html"><img src="kurta2.webp" class="card-img-top" alt="Kurta" /></a>
+          <div class="card-body text-center">
+            <h5 class="card-title">Traditional Kurta</h5>
+            <p class="card-text">Elegant ethnic wear made with fine fabric.</p>
+            <button class="btn btn-success">Buy Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  </section>
+
+    </div>
+  </section>
+
+  <section id="about" class="container py-5">
+    <h2 class="section-title text-center">About Us</h2>
+    <p>We are a leading textile manufacturer with over three decades of experience in crafting high-quality garments and fabrics. Our mission is to deliver style, comfort, and value to our customers.</p>
+  </section>
+
+  <!-- Reviews Section -->
+  <section id="reviews" class="container py-5">
+    <h2 class="section-title text-center">Customer Reviews</h2>
+  
+    <div id="reviewCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+  
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+          <div class="row g-4">
+            <div class="col-md-4">
+              <div class="review-card p-4 h-100">
+                <h5 class="mb-1">Ayesha R.</h5>
+                <p class="text-muted">"The quality of the fabric is top-notch. My family loves the new kurtas!"</p>
+                <small class="text-muted">⭐⭐⭐⭐⭐</small>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="review-card p-4 h-100">
+                <h5 class="mb-1">Sameer K.</h5>
+                <p class="text-muted">"Great variety and fantastic service. Fast delivery too!"</p>
+                <small class="text-muted">⭐⭐⭐⭐⭐</small>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="review-card p-4 h-100">
+                <h5 class="mb-1">Nisha Patel</h5>
+                <p class="text-muted">"Stylish and affordable. The denim jeans are my favorite!"</p>
+                <small class="text-muted">⭐⭐⭐⭐⭐</small>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Slide 2 -->
+        <div class="carousel-item">
+          <div class="row g-4">
+            <div class="col-md-4">
+              <div class="review-card p-4 h-100">
+                <h5 class="mb-1">Ayesha Khan</h5>
+                <p class="text-muted">“Fantastic quality and quick delivery.”</p>
+                <small class="text-muted">⭐⭐⭐⭐⭐</small>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="review-card p-4 h-100">
+                <h5 class="mb-1">Rahul Mehta</h5>
+                <p class="text-muted">“I always get compliments when I wear their shirts.”</p>
+                <small class="text-muted">⭐⭐⭐⭐</small>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="review-card p-4 h-100">
+                <h5 class="mb-1">Zara Ali</h5>
+                <p class="text-muted">“Great value for money and top-notch service.”</p>
+                <small class="text-muted">⭐⭐⭐⭐⭐</small>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Slide 3 -->
+        <div class="carousel-item">
+          <div class="row g-4">
+            <div class="col-md-4">
+              <div class="review-card p-4 h-100">
+                <h5 class="mb-1">Imran Shaikh</h5>
+                <p class="text-muted">“Love the kurta collection! Perfect for traditional events.”</p>
+                <small class="text-muted">⭐⭐⭐⭐</small>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="review-card p-4 h-100">
+                <h5 class="mb-1">Neha Verma</h5>
+                <p class="text-muted">“Great designs, quality stitching.”</p>
+                <small class="text-muted">⭐⭐⭐⭐⭐</small>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="review-card p-4 h-100">
+                <h5 class="mb-1">Aditya Rao</h5>
+                <p class="text-muted">“Exactly what I saw on the site. Highly recommended!”</p>
+                <small class="text-muted">⭐⭐⭐⭐⭐</small>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+  
+      <!-- Carousel Controls -->
+      <div id="homeCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#reviewCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#reviewCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+  </section>
+  
+  <section id="contact" class="container py-5">
+    <h2 class="section-title text-center">Contact</h2>
+    <div class="contact-card">
+      <div class="contact-info">
+        <p><strong>Email:</strong> mohdibrahimali91@gmail.com</p>
+        <p><strong>Phone:</strong> +91 9014644265</p>
+        <p><strong>Instagram:</strong> mdibrahim8500</p>
+        <p><strong>Address:</strong> 17-1-211/2/A/1, Crida Road, Near Masjid -E-Mansoor, Banu Nagar, Saidabad, Hyderabad, Telangana 500059</p>
+        
+      </div>
+    </div>
+  </section>
+
+  <section id="feedback" class="container py-5">
+    <div class="feedback-section">
+      <h2 class="section-title text-center">Feedback</h2>
+      <form action="mailto:mohdibrahimali91@gmail.com" method="post" enctype="text/plain">
+        <div class="mb-3">
+          <label for="name" class="form-label">Your Name</label>
+          <input type="text" class="form-control" id="name" name="Name" required />
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Your Email</label>
+          <input type="email" class="form-control" id="email" name="Email" required />
+        </div>
+        <div class="mb-3">
+          <label for="message" class="form-label">Message</label>
+          <textarea class="form-control" id="message" name="Message" rows="4" required></textarea>
+        </div>
+        <div class="text-center">
+          <button type="submit" class="btn btn-success">Send Feedback</button>
+        </div>
+      </form>
+    </div>
+  </section>
+  
+  <footer class="footer text-center mt-5">
+    <div class="container">
+      <p>&copy; 2025 MID Cloth Factory. All rights reserved.</p>
+      <p class="text-xs mt-1">Follow us on Instagram | Facebook | Twitter</p>
+      <p>
+        <a href="https://www.instagram.com/mdibrahim8500/"><i class="fab fa-instagram"></i></a>&nbsp;&nbsp;
+        <a href="#"><i class="fab fa-facebook"></i></a>&nbsp;&nbsp;
+        <a href="https://wa.me/919014644265"><i class="fab fa-whatsapp"></i></a>
+      </p>
+    </div>
+  </footer>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const searchInput = document.getElementById("productSearch");
+  
+    // Product keyword to page mapping
+    const productPages = {
+      "shirt": "shirts.html",
+      "kurta": "kurta.html",
+      "hoodie": "style hoddie.html",
+      "jacket": "winter jacket.html",
+      "winter jacket": "winter jacket.html",
+      "t shirt": "tshirt.html",
+      "t-shirt": "tshirt.html",
+      "tshirt": "tshirt.html",
+      "denim jeans": "denimjeans.html",
+      "denim": "denimjeans.html",
+      "jeans": "denimjeans.html",
+     
+      
+    };
+  
+    searchInput.addEventListener("keydown", function (event) {
+      if (event.key === "Enter") {
+        const query = searchInput.value.trim().toLowerCase();
+        if (productPages[query]) {
+          window.location.href = productPages[query];
+        } else {
+          alert("No matching product page found.");
+        }
+      }
+    });
+  </script>
+  
+  
+</body>
+</html>
