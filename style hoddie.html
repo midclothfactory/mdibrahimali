@@ -2,50 +2,94 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mid Factory - Traditional Kurtas</title>
-  <link rel="icon" type="image/png" href="favicon-32x32.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mid Cloth Factory - Collection</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    function toggleDropdown(id) {
+      const dropdowns = document.querySelectorAll('.dropdown');
+      dropdowns.forEach(drop => {
+        if (drop.id !== id) drop.classList.add('hidden');
+      });
+
+      const currentDropdown = document.getElementById(id);
+      currentDropdown.classList.toggle('hidden');
+    }
+
+    window.addEventListener('click', function (e) {
+      const buttons = document.querySelectorAll('button[onclick^="toggleDropdown"]');
+      const isButtonClick = Array.from(buttons).some(btn => btn.contains(e.target));
+
+      if (!isButtonClick) {
+        document.querySelectorAll('.dropdown').forEach(dropdown => {
+          dropdown.classList.add('hidden');
+        });
+      }
+    });
+  </script>
 </head>
 <body class="bg-gray-100">
 
   <!-- Header -->
-  <header class="bg-green-600 text-white py-5 shadow-md">
-    <div class="max-w-7xl mx-auto text-center">
-      <h1 class="text-3xl font-bold">MID Cloth Factory</h1>
+  <header class="fixed top-0 left-0 w-full bg-green-600 text-white py-6 shadow-lg z-50">
+    <div class="max-w-7xl mx-auto flex items-center justify-center space-x-4">
+      <img src="hoddie.jpg" alt="Logo" class="w-14 h-14 rounded-lg" />
+      <h1 class="text-4xl font-bold">MID Cloth Factory</h1>
     </div>
   </header>
 
-  <!-- Navbar -->
-  <!-- Navbar -->
-<nav class="bg-black text-white sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 py-2">
-      <div class="flex justify-between items-center">
-<!--         <a class="text-white font-bold text-xl" href="#">Cloth Factory</a> -->
-        <div class="space-x-6">
-          <a href="index.html" class="text-white">Home</a>
-          <a href="tshirt.html" class="text-white"> tshirt</a>
-          <a href="denimjeans.html" class="text-white">denimjeans</a>
-          <a href="winter jacket.html" class="text-white">winter jacket</a>
-          <a href="shirts.html" class="text-white">shirt</a>
-          <a href="kurta.html" class="text-white">kurta</a>
-        </div>
+  <div class="pt-36"></div>
+
+  <!-- Navigation -->
+  <nav class="bg-black text-white shadow-md py-2 fixed top-24 left-0 w-full z-40">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-center sm:space-x-20 space-y-4 sm:space-y-0 text-center font-semibold">
+      <!-- Home -->
+      <div>
+        <a href="INDEX.html" class="text-2xl font-bold hover:text-gray-300">Home</a>
+      </div>
+
+      <!-- Men's Wear -->
+      <div class="relative">
+        <button onclick="toggleDropdown('menDropdown')" class="text-2xl font-bold flex items-center gap-2 hover:text-gray-300">
+          Men's Wear <span class="text-base">▼</span>
+        </button>
+        <ul id="menDropdown" class="dropdown absolute hidden bg-black">
+          <li><a href="tshirt.html" class="block px-4 py-2 hover:bg-gray-800">T-shirt</a></li>
+          <li><a href="shirts.html" class="block px-4 py-2 hover:bg-gray-800">Shirt</a></li>
+          <li><a href="denimjeans.html" class="block px-4 py-2 hover:bg-gray-800">Denim Jeans</a></li>
+          <li><a href="winter jacket.html" class="block px-4 py-2 hover:bg-gray-800">Winter Jacket</a></li>
+          <li><a href="kurta.html" class="block px-4 py-2 hover:bg-gray-800">Kurta</a></li>
+        </ul>
+      </div>
+
+      <!-- Ladies Wear -->
+      <div class="relative">
+        <button onclick="toggleDropdown('ladiesDropdown')" class="text-2xl font-bold flex items-center gap-2 hover:text-gray-300">
+          Ladies Wear <span class="text-base">▼</span>
+        </button>
+        <ul id="ladiesDropdown" class="dropdown absolute hidden bg-black">
+          <li><a href="saree.html" class="block px-4 py-2 hover:bg-gray-800">Saree</a></li>
+          <li><a href="kurties.html" class="block px-4 py-2 hover:bg-gray-800">Kurties</a></li>
+          <li><a href="lenga bluse.html" class="block px-4 py-2 hover:bg-gray-800">Lehenga Blouse</a></li>
+          <li><a href="suit and shalwar.html" class="block px-4 py-2 hover:bg-gray-800">Suit & Shalwar</a></li>
+          <li><a href="western wear.html" class="block px-4 py-2 hover:bg-gray-800">Western Wear</a></li>
+          <li><a href="gown.html" class="block px-4 py-2 hover:bg-gray-800">Gown</a></li>
+        </ul>
       </div>
     </div>
   </nav>
-  
-
 
   <!-- Main Content -->
-  <main class="py-10 px-4">
-    <div class="max-w-7xl mx-auto">
-      <h2 class="text-2xl font-bold mb-8 text-center">Stylish Hoodie Collection</h2>
+  <main class="pt-6 px-4">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="text-4xl font-bold mb-8 text-center">Stylish Hoodie Collection</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-
-        <!-- Hoodie Card 1 -->
-        <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
-          <img src="Classic Hoodie.jpg" alt="Hoodie 1" class="w-full h-60 object-cover">
+       
+        <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+          <img src="Classic Hoodie.jpg" alt="Classic Hoodie" class="w-full h-60 object-cover">
           <div class="p-5">
             <h3 class="text-xl font-bold mb-2">Classic Hoodie</h3>
             <p class="text-gray-600 text-sm mb-4">Timeless design with cozy fleece lining.</p>
@@ -57,9 +101,12 @@
           </div>
         </div>
 
-        <!-- Hoodie Card 2 -->
-        <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
-          <img src="Zip-Up Hoodie.jpg" alt="Hoodie 2" class="w-full h-60 object-cover">
+        <!-- Repeat the above block for each product card, updating image, name, price, and description -->
+        <!-- For simplicity, here's a compact way to repeat your 5 other hoodie cards -->
+
+        <!-- Card 2 -->
+        <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+          <img src="Zip-Up Hoodie.jpg" alt="Zip-Up Hoodie" class="w-full h-60 object-cover">
           <div class="p-5">
             <h3 class="text-xl font-bold mb-2">Zip-Up Hoodie</h3>
             <p class="text-gray-600 text-sm mb-4">Comfortable and easy to wear.</p>
@@ -71,9 +118,9 @@
           </div>
         </div>
 
-        <!-- Hoodie Card 3 -->
-        <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
-          <img src="Oversized Hoodie.jpg" alt="Hoodie 3" class="w-full h-60 object-cover">
+        <!-- Card 3 -->
+        <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+          <img src="Oversized Hoodie.jpg" alt="Oversized Hoodie" class="w-full h-60 object-cover">
           <div class="p-5">
             <h3 class="text-xl font-bold mb-2">Oversized Hoodie</h3>
             <p class="text-gray-600 text-sm mb-4">Trendy oversized fit with bold prints.</p>
@@ -85,9 +132,9 @@
           </div>
         </div>
 
-        <!-- Hoodie Card 4 -->
-        <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
-          <img src="Graphic Hoodie.jpg" alt="Hoodie 4" class="w-full h-60 object-cover">
+        <!-- Card 4 -->
+        <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+          <img src="Graphic Hoodie.jpg" alt="Graphic Hoodie" class="w-full h-60 object-cover">
           <div class="p-5">
             <h3 class="text-xl font-bold mb-2">Graphic Hoodie</h3>
             <p class="text-gray-600 text-sm mb-4">Eye-catching graphics and modern cut.</p>
@@ -99,9 +146,9 @@
           </div>
         </div>
 
-        <!-- Hoodie Card 5 -->
-        <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
-          <img src="Cropped Hoodie.jpg" alt="Hoodie 5" class="w-full h-60 object-cover">
+        <!-- Card 5 -->
+        <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+          <img src="Cropped Hoodie.jpg" alt="Cropped Hoodie" class="w-full h-60 object-cover">
           <div class="p-5">
             <h3 class="text-xl font-bold mb-2">Cropped Hoodie</h3>
             <p class="text-gray-600 text-sm mb-4">Sporty cropped style for a bold look.</p>
@@ -113,9 +160,9 @@
           </div>
         </div>
 
-        <!-- Hoodie Card 6 -->
-        <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
-          <img src="Athleisure Hoodie1.webp" alt="Hoodie 6" class="w-full h-60 object-cover">
+        <!-- Card 6 -->
+        <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+          <img src="Athleisure Hoodie1.webp" alt="Athleisure Hoodie" class="w-full h-60 object-cover">
           <div class="p-5">
             <h3 class="text-xl font-bold mb-2">Athleisure Hoodie</h3>
             <p class="text-gray-600 text-sm mb-4">Perfect for workout or casual days.</p>
@@ -132,7 +179,7 @@
   </main>
 
   <!-- Footer -->
-  <footer class="bg-green-600 text-white py-6 mt-10">
+  <footer class="bg-black text-white py-6 mt-10">
     <div class="max-w-7xl mx-auto text-center">
       <p class="text-sm">&copy; 2025 Mid Factory. All rights reserved.</p>
       <p class="text-xs mt-1">Follow us on Instagram | Facebook | Twitter</p>
