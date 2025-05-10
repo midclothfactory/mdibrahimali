@@ -1,89 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mid Cloth Factory - Collection</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        function toggleDropdown(id) {
-            const dropdowns = document.querySelectorAll('.dropdown');
-            dropdowns.forEach(drop => {
-                if (drop.id !== id) drop.classList.add('hidden');
-            });
-            const currentDropdown = document.getElementById(id);
-            currentDropdown.classList.toggle('hidden');
-        }
-
-        window.addEventListener('click', function (e) {
-            const buttons = document.querySelectorAll('button[onclick^="toggleDropdown"]');
-            const isButtonClick = Array.from(buttons).some(btn => btn.contains(e.target));
-            if (!isButtonClick) {
-                document.querySelectorAll('.dropdown').forEach(dropdown => {
-                    dropdown.classList.add('hidden');
-                });
-            }
-        });
-    </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mid Cloth Factory - Collection</title>
+  <link rel="icon" type="image/png" href="favicon-32x32.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-
 <body class="bg-gray-100">
 
-    <!-- Header -->
-    <header class="fixed top-0 left-0 w-full bg-green-600 text-white py-6 shadow-lg z-50">
-        <div class="max-w-7xl mx-auto flex items-center justify-center space-x-4">
-            <img src="hoddie.jpg" alt="Logo" class="w-14 h-14 rounded-lg" />
-            <h1 class="text-4xl font-bold">MID Cloth Factory</h1>
-        </div>
-    </header>
+  <!-- Header -->
+ <header class="bg-green-700 text-white py-6 shadow-md">
+  <div class="max-w-7xl mx-auto flex items-center justify-center space-x-4 px-4">
+    <img src="hoddie.jpg" alt="Cloth Factory Logo" class="w-14 h-14 object-cover rounded-lg shadow-md" />
+    <div class="text-center">
+      <h1 class="text-2xl sm:text-3xl font-extrabold tracking-wide">MID Cloth Factory</h1>
+      <p class="text-sm sm:text-base font-light tracking-wider">Quality textiles since 2005</p>
+    </div>
+  </div>
+</header>
+<nav class="bg-black text-white sticky top-0 z-50 shadow-md">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <!-- Logo -->
+      <a href="#" class="text-xl font-bold">Cloth Factory</a>
 
-    <!-- Navigation -->
-    <nav class="bg-black text-white shadow-md py-2 fixed top-[96px] left-0 w-full z-40">
-        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-center sm:space-x-20 space-y-4 sm:space-y-0 text-center font-semibold">
-            <!-- Home -->
-            <div>
-                <a href="INDEX.html" class="text-2xl font-bold hover:text-gray-300">Home</a>
-            </div>
+      <!-- Hamburger (Mobile) -->
+      <div class="md:hidden">
+        <button id="menuToggle" class="text-white focus:outline-none">
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
 
-            <!-- Men's Wear -->
-            <div class="relative">
-                <button onclick="toggleDropdown('menDropdown')" class="text-2xl font-bold flex items-center gap-2 hover:text-gray-300">
-                    Men's Wear <span class="text-base">▼</span>
-                </button>
-                <ul id="menDropdown" class="dropdown absolute hidden bg-black">
-                    <li><a href="tshirt.html" class="block px-4 py-2 hover:bg-gray-800">T-shirt</a></li>
-                    <li><a href="shirts.html" class="block px-4 py-2 hover:bg-gray-800">Shirt</a></li>
-                    <li><a href="denimjeans.html" class="block px-4 py-2 hover:bg-gray-800">Denim Jeans</a></li>
-                    <li><a href="style hoddie.html" class="block px-4 py-2 hover:bg-gray-800">Style Hoodie</a></li>
-                    <li><a href="winter jacket.html" class="block px-4 py-2 hover:bg-gray-800">Winter Jacket</a></li>
-                    
-                </ul>
-            </div>
+      <!-- Nav Links (Desktop) -->
+      <div class="hidden md:flex space-x-6">
+        <a href="INDEX.html" class="hover:text-green-400">Home</a>
 
-            <!-- Ladies Wear -->
-            <div class="relative">
-                <button onclick="toggleDropdown('ladiesDropdown')" class="text-2xl font-bold flex items-center gap-2 hover:text-gray-300">
-                    Ladies Wear <span class="text-base">▼</span>
-                </button>
-                <ul id="ladiesDropdown" class="dropdown absolute hidden bg-black">
-                    <li><a href="saree.html" class="block px-4 py-2 hover:bg-gray-800">Saree</a></li>
-                    <li><a href="kurties.html" class="block px-4 py-2 hover:bg-gray-800">Kurties</a></li>
-                    <li><a href="lenga bluse.html" class="block px-4 py-2 hover:bg-gray-800">Lehenga Blouse</a></li>
-                    <li><a href="suit and shalwar.html" class="block px-4 py-2 hover:bg-gray-800">Suit & Shalwar</a></li>
-                    <li><a href="western wear.html" class="block px-4 py-2 hover:bg-gray-800">Western Wear</a></li>
-                    <li><a href="gown.html" class="block px-4 py-2 hover:bg-gray-800">Gown</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+        <!-- Men's Wear Dropdown -->
+<div class="relative group">
+  <button class="hover:text-green-400 font-medium">Men's Wear</button>
+  <div class="absolute left-0 mt-2 w-48 bg-white text-black rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition duration-300 z-50 hidden group-hover:block">
+    <a href="tshirt.html" class="block px-4 py-2 hover:bg-green-100">T-shirt</a>
+    <a href="shirts.html" class="block px-4 py-2 hover:bg-green-100">Shirt</a>
+    <a href="denimjeans.html" class="block px-4 py-2 hover:bg-green-100">Denim Jeans</a>
+    <a href="style hoddie.html" class="block px-4 py-2 hover:bg-green-100">Style Hoodie</a>
+    <a href="winter jacket.html" class="block px-4 py-2 hover:bg-green-100">Winter Jacket</a>
+    
+  </div>
+</div>
+       <!-- Ladies Wear Dropdown -->
+<div class="relative group">
+  <button class="hover:text-green-400 font-medium">Ladies Wear</button>
+  <div class="absolute left-0 mt-2 w-48 bg-white text-black rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition duration-300 z-50 hidden group-hover:block">
+    <a href="saree.html" class="block px-4 py-2 hover:bg-green-100">Saree</a>
+    <a href="kurties.html" class="block px-4 py-2 hover:bg-green-100">Kurties</a>
+    <a href="lenga bluse.html" class="block px-4 py-2 hover:bg-green-100">Lenga</a>
+    <a href="suit and shalwar.html" class="block px-4 py-2 hover:bg-green-100">Suit and Shalwar</a>
+    <a href="western wear.html" class="block px-4 py-2 hover:bg-green-100">Western Wear</a>
+    <a href="gown.html" class="block px-4 py-2 hover:bg-green-100">Gown</a>
+  </div>
+</div>
+
+
+
+
+      <!-- Search Box -->
+      <div class="hidden md:block">
+        <input id="productSearch" type="search" placeholder="Search products..."
+          class="px-3 py-1 rounded text-black focus:outline-none" />
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="md:hidden hidden px-4 pb-4">
+    <a href="INDEX.html" class="block py-2 border-b border-gray-700 hover:text-green-400">Home</a>
+    <!-- Men's Wear Dropdown -->
+<div class="relative group">
+  <button class="hover:text-green-400 font-medium">Men's Wear</button>
+  <div class="absolute left-0 mt-2 w-48 bg-white text-black rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition duration-300 z-50 hidden group-hover:block">
+    <a href="tshirt.html" class="block px-4 py-2 hover:bg-green-100">T-shirt</a>
+    <a href="shirts.html" class="block px-4 py-2 hover:bg-green-100">Shirt</a>
+    <a href="denimjeans.html" class="block px-4 py-2 hover:bg-green-100">Denim Jeans</a>
+    <a href="style hoddie.html" class="block px-4 py-2 hover:bg-green-100">Style Hoodie</a>
+    <a href="winter jacket.html" class="block px-4 py-2 hover:bg-green-100">Winter Jacket</a>
+    
+  </div>
+</div>
+       <!-- Ladies Wear Dropdown -->
+<div class="relative group">
+  <button class="hover:text-green-400 font-medium">Ladies Wear</button>
+  <div class="absolute left-0 mt-2 w-48 bg-white text-black rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition duration-300 z-50 hidden group-hover:block">
+    <a href="saree.html" class="block px-4 py-2 hover:bg-green-100">Saree</a>
+    <a href="kurties.html" class="block px-4 py-2 hover:bg-green-100">Kurties</a>
+    <a href="lenga bluse.html" class="block px-4 py-2 hover:bg-green-100">Lenga</a>
+    <a href="suit and shalwar.html" class="block px-4 py-2 hover:bg-green-100">Suit and Shalwar</a>
+    <a href="western wear.html" class="block px-4 py-2 hover:bg-green-100">Western Wear</a>
+    <a href="gown.html" class="block px-4 py-2 hover:bg-green-100">Gown</a>
+  </div>
+</div>
+    <input id="mobileProductSearch" type="search" placeholder="Search products..."
+      class="mt-2 px-3 py-1 rounded text-black w-full focus:outline-none" />
+  </div>
+</nav>
 <br>
 <br>
 
     <!-- Main Content -->
-    <main class="py-6 px-4 mt-24">
+    <main class="pt-10 px-4 pb-10">
+
         <div class="max-w-7xl mx-auto">
             <h2 class="text-4xl font-bold mb-8 text-center">Traditional Kurtas Collection</h2>
 
@@ -91,8 +119,7 @@
 
                 <!-- Card Template -->
                 <!-- Repeat for each product -->
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl">
-                    <img src="Classic White Kurta.jpg" alt="Kurta 1" class="w-full h-60 object-cover">
+<div class="bg-white rounded-2xl shadow-lg overflow-hidden transition-transform duration-300 transform hover:scale-105 hover:shadow-green-300 hover:shadow-xl">                    <img src="Classic White Kurta.jpg" alt="Kurta 1" class="w-full h-60 object-cover">
                     <div class="p-5">
                         <h3 class="text-xl font-bold mb-2">Classic White Kurta</h3>
                         <p class="text-gray-600 text-sm mb-4">Elegant and timeless traditional design.</p>
@@ -105,8 +132,7 @@
                 </div>
 
                 <!-- Product 2 -->
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl">
-                    <img src="Printed Festive Kurta.jpg" alt="Kurta 2" class="w-full h-60 object-cover">
+<div class="bg-white rounded-2xl shadow-lg overflow-hidden transition-transform duration-300 transform hover:scale-105 hover:shadow-green-300 hover:shadow-xl">                    <img src="Printed Festive Kurta.jpg" alt="Kurta 2" class="w-full h-60 object-cover">
                     <div class="p-5">
                         <h3 class="text-xl font-bold mb-2">Printed Festive Kurta</h3>
                         <p class="text-gray-600 text-sm mb-4">Perfect for celebrations and festivals.</p>
@@ -119,8 +145,7 @@
                 </div>
 
                 <!-- Product 3 -->
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl">
-                    <img src="Nehru Collar Kurta.jpg" alt="Kurta 3" class="w-full h-60 object-cover">
+<div class="bg-white rounded-2xl shadow-lg overflow-hidden transition-transform duration-300 transform hover:scale-105 hover:shadow-green-300 hover:shadow-xl">                    <img src="Nehru Collar Kurta.jpg" alt="Kurta 3" class="w-full h-60 object-cover">
                     <div class="p-5">
                         <h3 class="text-xl font-bold mb-2">Designer Kurta</h3>
                         <p class="text-gray-600 text-sm mb-4">Stylish and comfortable for everyday wear.</p>
@@ -133,8 +158,7 @@
                 </div>
 
                 <!-- Product 4 -->
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl">
-                    <img src="Embroidered Kurta.jpg" alt="Kurta 4" class="w-full h-60 object-cover">
+<div class="bg-white rounded-2xl shadow-lg overflow-hidden transition-transform duration-300 transform hover:scale-105 hover:shadow-green-300 hover:shadow-xl">                    <img src="Embroidered Kurta.jpg" alt="Kurta 4" class="w-full h-60 object-cover">
                     <div class="p-5">
                         <h3 class="text-xl font-bold mb-2">Casual Grey Kurta</h3>
                         <p class="text-gray-600 text-sm mb-4">A casual kurta for daily comfort.</p>
@@ -147,8 +171,7 @@
                 </div>
 
                 <!-- Product 5 -->
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl">
-                    <img src="Asymmetric Kurta.jpg" alt="Kurta 5" class="w-full h-60 object-cover">
+<div class="bg-white rounded-2xl shadow-lg overflow-hidden transition-transform duration-300 transform hover:scale-105 hover:shadow-green-300 hover:shadow-xl">                    <img src="Asymmetric Kurta.jpg" alt="Kurta 5" class="w-full h-60 object-cover">
                     <div class="p-5">
                         <h3 class="text-xl font-bold mb-2">Light Blue Kurta</h3>
                         <p class="text-gray-600 text-sm mb-4">Bright and fresh for every season.</p>
@@ -161,8 +184,7 @@
                 </div>
 
                 <!-- Product 6 -->
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl">
-                    <img src="Short Kurta.jpg" alt="Kurta 6" class="w-full h-60 object-cover">
+<div class="bg-white rounded-2xl shadow-lg overflow-hidden transition-transform duration-300 transform hover:scale-105 hover:shadow-green-300 hover:shadow-xl">                    <img src="Short Kurta.jpg" alt="Kurta 6" class="w-full h-60 object-cover">
                     <div class="p-5">
                         <h3 class="text-xl font-bold mb-2">Traditional Maroon Kurta</h3>
                         <p class="text-gray-600 text-sm mb-4">Rich in color and design, perfect for events.</p>
@@ -186,6 +208,83 @@
         </div>
     </footer>
 
-</body>
+ <!-- JavaScript for Dropdowns & Mobile Menu -->
+  <script>
+  function toggleDropdown(id) {
+    const dropdown = document.getElementById(id);
+    const allDropdowns = document.querySelectorAll('nav ul');
+    allDropdowns.forEach(menu => {
+      if (menu !== dropdown) {
+        menu.classList.add('hidden');
+      }
+    });
+    dropdown.classList.toggle('hidden');
+  }
 
+  // Toggle mobile menu
+  const menuToggle = document.getElementById('menuToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  menuToggle.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+
+  // Close dropdowns when clicking outside
+  document.addEventListener('click', function(event) {
+    const dropdowns = document.querySelectorAll('nav ul');
+    dropdowns.forEach(dropdown => {
+      if (!dropdown.contains(event.target) && !dropdown.previousElementSibling.contains(event.target)) {
+        dropdown.classList.add('hidden');
+      }
+    });
+  });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const searchInput = document.getElementById("productSearch");
+  
+    // Product keyword to page mapping
+    const productPages = {
+      "shirt": "shirts.html",
+      "kurta": "kurta.html",
+      "hoodie": "style hoddie.html",
+      "jacket": "winter jacket.html",
+      "winter jacket": "winter jacket.html",
+      "t shirt": "tshirt.html",
+      "t-shirt": "tshirt.html",
+      "tshirt": "tshirt.html",
+      "denim jeans": "denimjeans.html",
+      "denim": "denimjeans.html",
+      "jeans": "denimjeans.html",
+       
+      // ladies
+      "saree": "saree.html",
+      "kurties": "kurties.html",
+      "lenga": "lenga bluse.html",
+      "suit": "suit and shalwar.html",
+      "western wear": "western wear.html",
+      "gown": "gown.html",
+
+     
+      
+    };
+  
+    searchInput.addEventListener("keydown", function (event) {
+      if (event.key === "Enter") {
+        const query = searchInput.value.trim().toLowerCase();
+        if (productPages[query]) {
+          window.location.href = productPages[query];
+        } else {
+          alert("No matching product page found.");
+        }
+      }
+    });
+    
+  // Initialize search for both desktop and mobile inputs
+  setupSearch('productSearch');
+  setupSearch('mobileProductSearch');
+  </script>
+
+</body>
 </html>
+
+
