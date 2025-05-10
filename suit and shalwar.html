@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mid Cloth Factory - Collection</title>
+  <link rel="icon" type="image/png" href="favicon-32x32.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+  <!-- Header -->
+ <header class="bg-green-700 text-white py-6 shadow-md">
+  <div class="max-w-7xl mx-auto flex items-center justify-center space-x-4 px-4">
+    <img src="hoddie.jpg" alt="Cloth Factory Logo" class="w-14 h-14 object-cover rounded-lg shadow-md" />
+    <div class="text-center">
+      <h1 class="text-2xl sm:text-3xl font-extrabold tracking-wide">MID Cloth Factory</h1>
+      <p class="text-sm sm:text-base font-light tracking-wider">Quality textiles since 2005</p>
+    </div>
+  </div>
+</header>
+<nav class="bg-black text-white sticky top-0 z-50 shadow-md">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <!-- Logo -->
+      <a href="#" class="text-xl font-bold">Cloth Factory</a>
+
+      <!-- Hamburger (Mobile) -->
+      <div class="md:hidden">
+        <button id="menuToggle" class="text-white focus:outline-none">
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Nav Links (Desktop) -->
+      <div class="hidden md:flex space-x-6">
+        <a href="INDEX.html" class="hover:text-green-400">Home</a>
+
+        <!-- Men's Wear Dropdown -->
+<div class="relative group">
+  <button class="hover:text-green-400 font-medium">Men's Wear</button>
+  <div class="absolute left-0 mt-2 w-48 bg-white text-black rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition duration-300 z-50 hidden group-hover:block">
+    <a href="tshirt.html" class="block px-4 py-2 hover:bg-green-100">T-shirt</a>
+    <a href="shirts.html" class="block px-4 py-2 hover:bg-green-100">Shirt</a>
+    <a href="denimjeans.html" class="block px-4 py-2 hover:bg-green-100">Denim Jeans</a>
+    <a href="style hoddie.html" class="block px-4 py-2 hover:bg-green-100">Style Hoodie</a>
+    <a href="winter jacket.html" class="block px-4 py-2 hover:bg-green-100">Winter Jacket</a>
+    <a href="kurta.html" class="block px-4 py-2 hover:bg-green-100">Kurta</a>
+  </div>
+</div>
+       <!-- Ladies Wear Dropdown -->
+<div class="relative group">
+  <button class="hover:text-green-400 font-medium">Ladies Wear</button>
+  <div class="absolute left-0 mt-2 w-48 bg-white text-black rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition duration-300 z-50 hidden group-hover:block">
+    <a href="saree.html" class="block px-4 py-2 hover:bg-green-100">Saree</a>
+    <a href="kurties.html" class="block px-4 py-2 hover:bg-green-100">Kurties</a>
+    <a href="lenga bluse.html" class="block px-4 py-2 hover:bg-green-100">Lenga</a>
+    <a href="western wear.html" class="block px-4 py-2 hover:bg-green-100">Western Wear</a>
+    <a href="gown.html" class="block px-4 py-2 hover:bg-green-100">Gown</a>
+  </div>
+</div>
+
+
+
+
+      <!-- Search Box -->
+      <div class="hidden md:block">
+        <input id="productSearch" type="search" placeholder="Search products..."
+          class="px-3 py-1 rounded text-black focus:outline-none" />
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="md:hidden hidden px-4 pb-4">
+    <a href="INDEX.html" class="block py-2 border-b border-gray-700 hover:text-green-400">Home</a>
+    <!-- Men's Wear Dropdown -->
+<div class="relative group">
+  <button class="hover:text-green-400 font-medium">Men's Wear</button>
+  <div class="absolute left-0 mt-2 w-48 bg-white text-black rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition duration-300 z-50 hidden group-hover:block">
+    <a href="tshirt.html" class="block px-4 py-2 hover:bg-green-100">T.shirt</a>
+    <a href="shirts.html" class="block px-4 py-2 hover:bg-green-100">Shirt</a>
+    <a href="denimjeans.html" class="block px-4 py-2 hover:bg-green-100">Denim Jeans</a>
+    <a href="style hoddie.html" class="block px-4 py-2 hover:bg-green-100">Style Hoodie</a>
+    <a href="winter jacket.html" class="block px-4 py-2 hover:bg-green-100">Winter Jacket</a>
+    <a href="kurta.html" class="block px-4 py-2 hover:bg-green-100">Kurta</a>
+  </div>
+</div>
+       <!-- Ladies Wear Dropdown -->
+<div class="relative group">
+  <button class="hover:text-green-400 font-medium">Ladies Wear</button>
+  <div class="absolute left-0 mt-2 w-48 bg-white text-black rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition duration-300 z-50 hidden group-hover:block">
+    <a href="saree.html" class="block px-4 py-2 hover:bg-green-100">Saree</a>
+    <a href="kurties.html" class="block px-4 py-2 hover:bg-green-100">Kurties</a>
+    <a href="lenga bluse.html" class="block px-4 py-2 hover:bg-green-100">Lenga</a>
+    <a href="western wear.html" class="block px-4 py-2 hover:bg-green-100">Western Wear</a>
+    <a href="gown.html" class="block px-4 py-2 hover:bg-green-100">Gown</a>
+  </div>
+</div>
+    <input id="mobileProductSearch" type="search" placeholder="Search products..."
+      class="mt-2 px-3 py-1 rounded text-black w-full focus:outline-none" />
+  </div>
+</nav>
+  <section class="max-w-7xl mx-auto px-4 py-10">
+    <h2 class="text-4xl font-bold text-center mb-8">Suits & Shalwar Collection</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+  
+      <!-- Suit 1: Bright Yellow Floral Suit -->
+    <div class="bg-white rounded-2xl shadow-lg overflow-hidden transition-transform duration-300 transform hover:scale-105 hover:shadow-green-300 hover:shadow-xl">
+  <img src="suit 2.webp" alt="Bright Yellow Floral Suit" >
+  <div class="p-5">
+    <h3 class="text-xl font-bold mb-2">Zinal Pink Cotton Embroidered Suit </h3>
+    <p class="text-gray-600 text-sm mb-4">This Zinal Pink Cotton Suit Set is made from pure cotton, providing soft and comfortable wear. The embroidery on the yoke adds intricate details to the design, while the tiered kurta adds a touch of elegance..</p>
+    <div class="text-green-600 font-semibold mb-4">₹2,200</div>
+    <div class="flex space-x-2">
+      <button class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded w-1/2 text-sm">Buy Now</button>
+      <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded w-1/2 text-sm">Add to Cart</button>
+    </div>
+  </div>
+</div>
+
+<!-- Suit 2: Elegant Navy Blue Embroidered Suit -->
+    <div class="bg-white rounded-2xl shadow-lg overflow-hidden transition-transform duration-300 transform hover:scale-105 hover:shadow-green-300 hover:shadow-xl">
+  <img src="suit 1.webp" alt="Navy Blue Embroidered Suit" >
+  <div class="p-5">
+    <h3 class="text-xl font-bold mb-2">Nehmat Magenta Angrakha Suit </h3>
+    <p class="text-gray-600 text-sm mb-4">This stunning Nehmat Magenta Angrakha Suit Set is crafted with luxurious silk boota fabric, adding a touch of elegance to your wardrobe</p>
+    <div class="text-green-600 font-semibold mb-4">₹2,800</div>
+    <div class="flex space-x-2">
+      <button class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded w-1/2 text-sm">Buy Now</button>
+      <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded w-1/2 text-sm">Add to Cart</button>
+    </div>
+  </div>
+</div>
+
+<!-- Suit 3: Magenta Ethnic Suit -->
+    <div class="bg-white rounded-2xl shadow-lg overflow-hidden transition-transform duration-300 transform hover:scale-105 hover:shadow-green-300 hover:shadow-xl">
+  <img src="suit 3.webp" alt="Magenta Ethnic Suit" >
+  <div class="p-5">
+    <h3 class="text-xl font-bold mb-2">Siya White Cotton Gotapatti Suit</h3>
+    <p class="text-gray-600 text-sm mb-4">Expertly crafted from pure cotton, the Siya White Cotton Gotapatti Suit Set is a must-have addition to any wardrobe..</p>
+    <div class="text-green-600 font-semibold mb-4">₹3,200</div>
+    <div class="flex space-x-2">
+      <button class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded w-1/2 text-sm">Buy Now</button>
+      <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded w-1/2 text-sm">Add to Cart</button>
+    </div>
+  </div>
+</div>
+
+<!-- Suit 4: Pastel Pink Classy Suit -->
+    <div class="bg-white rounded-2xl shadow-lg overflow-hidden transition-transform duration-300 transform hover:scale-105 hover:shadow-green-300 hover:shadow-xl">
+  <img src="suit 4.webp" alt="Pastel Pink Suit" >
+  <div class="p-5">
+    <h3 class="text-xl font-bold mb-2">Sanjhi Green Zari Embroidered Chanderi Suit</h3>
+    <p class="text-gray-600 text-sm mb-4">Expertly crafted from premium chanderi fabric with detailed cord embroidery at the yoke, the Sanjhi Green Zari Embroidered Chanderi Suit </p>
+    <div class="text-green-600 font-semibold mb-4">₹2,600</div>
+    <div class="flex space-x-2">
+      <button class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded w-1/2 text-sm">Buy Now</button>
+      <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded w-1/2 text-sm">Add to Cart</button>
+    </div>
+  </div>
+</div>
+
+<!-- Suit 5: Black & White Art-Inspired Suit -->
+    <div class="bg-white rounded-2xl shadow-lg overflow-hidden transition-transform duration-300 transform hover:scale-105 hover:shadow-green-300 hover:shadow-xl">
+  <img src="suit 5.webp" alt="Black White Art Suit" >
+  <div class="p-5">
+    <h3 class="text-xl font-bold mb-2">Aadhya Pink Cotton Gotapatti  Suit</h3>
+    <p class="text-gray-600 text-sm mb-4">Experience the elegance and comfort with our Aadhya Pink Cotton Gotapatti Suit Set. Made with high-quality cotton fabric, this suit set will keep you cool and comfortable all day long.</p>
+    <div class="text-green-600 font-semibold mb-4">₹2,300</div>
+    <div class="flex space-x-2">
+      <button class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded w-1/2 text-sm">Buy Now</button>
+      <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded w-1/2 text-sm">Add to Cart</button>
+    </div>
+  </div>
+</div>
+
+<!-- Suit 6: Solid Maroon Minimalist Suit -->
+    <div class="bg-white rounded-2xl shadow-lg overflow-hidden transition-transform duration-300 transform hover:scale-105 hover:shadow-green-300 hover:shadow-xl">
+  <img src="suit 6.webp" alt="Solid Maroon Suit" >
+  <div class="p-5">
+    <h3 class="text-xl font-bold mb-2">Asvika Pink Handpainted Suit</h3>
+    <p class="text-gray-600 text-sm mb-4">Add a touch of artistry to your wardrobe with the Asvika Pink Handpainted Suit Set.</p>
+    <div class="text-green-600 font-semibold mb-4">₹2,000</div>
+    <div class="flex space-x-2">
+      <button class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded w-1/2 text-sm">Buy Now</button>
+      <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded w-1/2 text-sm">Add to Cart</button>
+    </div>
+  </div>
+</div>
+
+  
+    </div>
+  </section>
+    
+  
+   <!-- Footer -->
+   <footer class="bg-black text-white py-6 mt-10">
+    <div class="max-w-7xl mx-auto text-center">
+      <p class="text-sm">&copy; 2025 Mid Cloth Factory. All rights reserved.</p>
+      <p class="text-xs mt-1">Follow us on Instagram | Facebook | Twitter</p>
+    </div>
+  </footer>
+
+
+
+  <!-- JavaScript for Dropdowns & Mobile Menu -->
+  <script>
+  function toggleDropdown(id) {
+    const dropdown = document.getElementById(id);
+    const allDropdowns = document.querySelectorAll('nav ul');
+    allDropdowns.forEach(menu => {
+      if (menu !== dropdown) {
+        menu.classList.add('hidden');
+      }
+    });
+    dropdown.classList.toggle('hidden');
+  }
+
+  // Toggle mobile menu
+  const menuToggle = document.getElementById('menuToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  menuToggle.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+
+  // Close dropdowns when clicking outside
+  document.addEventListener('click', function(event) {
+    const dropdowns = document.querySelectorAll('nav ul');
+    dropdowns.forEach(dropdown => {
+      if (!dropdown.contains(event.target) && !dropdown.previousElementSibling.contains(event.target)) {
+        dropdown.classList.add('hidden');
+      }
+    });
+  });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const searchInput = document.getElementById("productSearch");
+  
+    // Product keyword to page mapping
+    const productPages = {
+      "shirt": "shirts.html",
+      "kurta": "kurta.html",
+      "hoodie": "style hoddie.html",
+      "jacket": "winter jacket.html",
+      "winter jacket": "winter jacket.html",
+      "t shirt": "tshirt.html",
+      "t-shirt": "tshirt.html",
+      "tshirt": "tshirt.html",
+      "denim jeans": "denimjeans.html",
+      "denim": "denimjeans.html",
+      "jeans": "denimjeans.html",
+       
+      // ladies
+      "saree": "saree.html",
+      "kurties": "kurties.html",
+      "lenga": "lenga bluse.html",
+      "suit": "suit and shalwar.html",
+      "western wear": "western wear.html",
+      "gown": "gown.html",
+
+     
+      
+    };
+  
+    searchInput.addEventListener("keydown", function (event) {
+      if (event.key === "Enter") {
+        const query = searchInput.value.trim().toLowerCase();
+        if (productPages[query]) {
+          window.location.href = productPages[query];
+        } else {
+          alert("No matching product page found.");
+        }
+      }
+    });
+    
+  // Initialize search for both desktop and mobile inputs
+  setupSearch('productSearch');
+  setupSearch('mobileProductSearch');
+  </script>
+
+</body>
+</html>
+
+  
+  

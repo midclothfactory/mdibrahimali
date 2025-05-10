@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mid Cloth Factory - Collection</title>
+  <link rel="icon" type="image/png" href="favicon-32x32.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+  <!-- Header -->
+ <header class="bg-green-700 text-white py-6 shadow-md">
+  <div class="max-w-7xl mx-auto flex items-center justify-center space-x-4 px-4">
+    <img src="hoddie.jpg" alt="Cloth Factory Logo" class="w-14 h-14 object-cover rounded-lg shadow-md" />
+    <div class="text-center">
+      <h1 class="text-2xl sm:text-3xl font-extrabold tracking-wide">MID Cloth Factory</h1>
+      <p class="text-sm sm:text-base font-light tracking-wider">Quality textiles since 2005</p>
+    </div>
+  </div>
+</header>
+<nav class="bg-black text-white sticky top-0 z-50 shadow-md">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <!-- Logo -->
+      <a href="#" class="text-xl font-bold">Cloth Factory</a>
+
+      <!-- Hamburger (Mobile) -->
+      <div class="md:hidden">
+        <button id="menuToggle" class="text-white focus:outline-none">
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Nav Links (Desktop) -->
+      <div class="hidden md:flex space-x-6">
+        <a href="INDEX.html" class="hover:text-green-400">Home</a>
+
+        <!-- Men's Wear Dropdown -->
+<div class="relative group">
+  <button class="hover:text-green-400 font-medium">Men's Wear</button>
+  <div class="absolute left-0 mt-2 w-48 bg-white text-black rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition duration-300 z-50 hidden group-hover:block">
+    <a href="tshirt.html" class="block px-4 py-2 hover:bg-green-100">T-shirt</a>
+    <a href="shirts.html" class="block px-4 py-2 hover:bg-green-100">Shirt</a>
+    <a href="denimjeans.html" class="block px-4 py-2 hover:bg-green-100">Denim Jeans</a>
+    <a href="style hoddie.html" class="block px-4 py-2 hover:bg-green-100">Style Hoodie</a>
+    <a href="winter jacket.html" class="block px-4 py-2 hover:bg-green-100">Winter Jacket</a>
+    <a href="kurta.html" class="block px-4 py-2 hover:bg-green-100">Kurta</a>
+  </div>
+</div>
+       <!-- Ladies Wear Dropdown -->
+<div class="relative group">
+  <button class="hover:text-green-400 font-medium">Ladies Wear</button>
+  <div class="absolute left-0 mt-2 w-48 bg-white text-black rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition duration-300 z-50 hidden group-hover:block">
+    <a href="saree.html" class="block px-4 py-2 hover:bg-green-100">Saree</a>
+    <a href="lenga bluse.html" class="block px-4 py-2 hover:bg-green-100">Lenga</a>
+    <a href="suit and shalwar.html" class="block px-4 py-2 hover:bg-green-100">Suit and Shalwar</a>
+    <a href="western wear.html" class="block px-4 py-2 hover:bg-green-100">Western Wear</a>
+    <a href="gown.html" class="block px-4 py-2 hover:bg-green-100">Gown</a>
+  </div>
+</div>
+
+
+
+
+      <!-- Search Box -->
+      <div class="hidden md:block">
+        <input id="productSearch" type="search" placeholder="Search products..."
+          class="px-3 py-1 rounded text-black focus:outline-none" />
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="md:hidden hidden px-4 pb-4">
+    <a href="INDEX.html" class="block py-2 border-b border-gray-700 hover:text-green-400">Home</a>
+    <!-- Men's Wear Dropdown -->
+<div class="relative group">
+  <button class="hover:text-green-400 font-medium">Men's Wear</button>
+  <div class="absolute left-0 mt-2 w-48 bg-white text-black rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition duration-300 z-50 hidden group-hover:block">
+    <a href="tshirt.html" class="block px-4 py-2 hover:bg-green-100">T.shirt</a>
+    <a href="shirts.html" class="block px-4 py-2 hover:bg-green-100">Shirt</a>
+    <a href="denimjeans.html" class="block px-4 py-2 hover:bg-green-100">Denim Jeans</a>
+    <a href="style hoddie.html" class="block px-4 py-2 hover:bg-green-100">Style Hoodie</a>
+    <a href="winter jacket.html" class="block px-4 py-2 hover:bg-green-100">Winter Jacket</a>
+    <a href="kurta.html" class="block px-4 py-2 hover:bg-green-100">Kurta</a>
+  </div>
+</div>
+       <!-- Ladies Wear Dropdown -->
+<div class="relative group">
+  <button class="hover:text-green-400 font-medium">Ladies Wear</button>
+  <div class="absolute left-0 mt-2 w-48 bg-white text-black rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition duration-300 z-50 hidden group-hover:block">
+    <a href="saree.html" class="block px-4 py-2 hover:bg-green-100">Saree</a>
+    <a href="lenga bluse.html" class="block px-4 py-2 hover:bg-green-100">Lenga</a>
+    <a href="suit and shalwar.html" class="block px-4 py-2 hover:bg-green-100">Suit and Shalwar</a>
+    <a href="western wear.html" class="block px-4 py-2 hover:bg-green-100">Western Wear</a>
+    <a href="gown.html" class="block px-4 py-2 hover:bg-green-100">Gown</a>
+  </div>
+</div>
+    <input id="mobileProductSearch" type="search" placeholder="Search products..."
+      class="mt-2 px-3 py-1 rounded text-black w-full focus:outline-none" />
+  </div>
+</nav>
+
+
+  <!-- Main Content -->
+<!-- Kurti Collection Section -->
+<div class="mt-16">
+    <h2 class="text-4xl font-bold mb-8 text-center">Kurti Collection</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+  
+      <!-- Kurti 1 -->
+    <div class="bg-white rounded-2xl shadow-lg overflow-hidden transition-transform duration-300 transform hover:scale-105 hover:shadow-green-300 hover:shadow-xl">
+        <img src="kurt1.webp" alt="Pink Embroidered Kurti" >
+        <div class="p-5">
+          <h3 class="text-xl font-bold mb-2">black embroidered Kurti</h3>
+          <p class="text-gray-600 text-sm mb-4">Elevate your wardrobe with our exquisite black embroidered Kurti, crafted from premium cotton for ultimate comfort and breathability..</p>
+          <div class="text-green-600 font-semibold mb-4">₹1,200</div>
+          <div class="flex space-x-2">
+            <button class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded w-1/2 text-sm">Buy Now</button>
+            <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded w-1/2 text-sm">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Kurti 2 -->
+    <div class="bg-white rounded-2xl shadow-lg overflow-hidden transition-transform duration-300 transform hover:scale-105 hover:shadow-green-300 hover:shadow-xl">
+        <img src="kurti2.webp" alt="Green Printed Kurti" >
+        <div class="p-5">
+          <h3 class="text-xl font-bold mb-2">Beautiful Organza Printed Ready Made Kurti</h3>
+          <p class="text-gray-600 text-sm mb-4"> Elevate your wardrobe with our Beautiful Organza Printed Ready Made Kurt crafted from soft, breathable cotton for all-day comfort. .</p>
+          <div class="text-green-600 font-semibold mb-4">₹1,450</div>
+          <div class="flex space-x-2">
+            <button class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded w-1/2 text-sm">Buy Now</button>
+            <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded w-1/2 text-sm">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Kurti 3 -->
+    <div class="bg-white rounded-2xl shadow-lg overflow-hidden transition-transform duration-300 transform hover:scale-105 hover:shadow-green-300 hover:shadow-xl">
+        <img src="kurti3.webp" alt="Yellow Bell Sleeve Kurti" >
+        <div class="p-5">
+          <h3 class="text-xl font-bold mb-2">Women Straight Lining Kurti</h3>
+          <p class="text-gray-600 text-sm mb-4">premium cotton, this kurti features a stylish calf-length design and comfortable 3/4 sleeves. It comes ready to wear as a set of one and is easy to care for—machine washable with a low iron setting if needed.</p>
+          <div class="text-green-600 font-semibold mb-4">₹1,150</div>
+          <div class="flex space-x-2">
+            <button class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded w-1/2 text-sm">Buy Now</button>
+            <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded w-1/2 text-sm">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Kurti 4 -->
+    <div class="bg-white rounded-2xl shadow-lg overflow-hidden transition-transform duration-300 transform hover:scale-105 hover:shadow-green-300 hover:shadow-xl">
+        <img src="kurti4.webp" alt="Blue-Green Sleeveless Kurti" >
+        <div class="p-5">
+          <h3 class="text-xl font-bold mb-2">Yellow Embroidery Kurti</h3>
+          <p class="text-gray-600 text-sm mb-4">Elevate your style with our 100% Pure Cotton Calf Length Kurti. Made from premium cotton, this kurti features a sophisticated calf-length cut and stylish 3/4 sleeves, perfect for any occasion..</p>
+          <div class="text-green-600 font-semibold mb-4">₹1,300</div>
+          <div class="flex space-x-2">
+            <button class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded w-1/2 text-sm">Buy Now</button>
+            <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded w-1/2 text-sm">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+<!--   
+    </div>
+  </div> -->
+  
+
+    <div class="bg-white rounded-2xl shadow-lg overflow-hidden transition-transform duration-300 transform hover:scale-105 hover:shadow-green-300 hover:shadow-xl">
+            <img src="kurti5.webp" alt="Embellished Gown" >
+            <div class="p-5">
+              <h3 class="text-xl font-bold mb-2">Jaipur Fabric® A line White Kurti</h3>
+              <p class="text-gray-600 text-sm mb-4">Trendy Jaipur Fabric A line White Kurti with traditional patterns..</p>
+              <div class="text-green-600 font-semibold mb-4">₹2,500</div>
+              <div class="flex space-x-2">
+                <button class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded w-1/2 text-sm">Buy Now</button>
+                <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded w-1/2 text-sm">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+
+    <div class="bg-white rounded-2xl shadow-lg overflow-hidden transition-transform duration-300 transform hover:scale-105 hover:shadow-green-300 hover:shadow-xl">
+            <img src="kurti6.avif"alt="Embellished Gown" >
+           <div class="p-5">
+              <h3 class="text-xl font-bold mb-2">women floral printed sleeveless straight kurti</h3>
+              <p class="text-gray-600 text-sm mb-4">Look pretty in a Kurti  get it in maroon.  has something for everyone.</p>
+              <div class="text-green-600 font-semibold mb-4">₹1,500</div>
+              <div class="flex space-x-2">
+                <button class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded w-1/2 text-sm">Buy Now</button>
+                <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded w-1/2 text-sm">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+ <footer class="bg-black text-white py-6 mt-10">
+    <div class="max-w-7xl mx-auto text-center">
+      <p class="text-sm">&copy; 2025 Mid Cloth Factory. All rights reserved.</p>
+      <p class="text-xs mt-1">Follow us on Instagram | Facebook | Twitter</p>
+    </div>
+  </footer>
+  <!-- JavaScript for Dropdowns & Mobile Menu -->
+  <script>
+  function toggleDropdown(id) {
+    const dropdown = document.getElementById(id);
+    const allDropdowns = document.querySelectorAll('nav ul');
+    allDropdowns.forEach(menu => {
+      if (menu !== dropdown) {
+        menu.classList.add('hidden');
+      }
+    });
+    dropdown.classList.toggle('hidden');
+  }
+
+  // Toggle mobile menu
+  const menuToggle = document.getElementById('menuToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  menuToggle.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+
+  // Close dropdowns when clicking outside
+  document.addEventListener('click', function(event) {
+    const dropdowns = document.querySelectorAll('nav ul');
+    dropdowns.forEach(dropdown => {
+      if (!dropdown.contains(event.target) && !dropdown.previousElementSibling.contains(event.target)) {
+        dropdown.classList.add('hidden');
+      }
+    });
+  });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const searchInput = document.getElementById("productSearch");
+  
+    // Product keyword to page mapping
+    const productPages = {
+      "shirt": "shirts.html",
+      "kurta": "kurta.html",
+      "hoodie": "style hoddie.html",
+      "jacket": "winter jacket.html",
+      "winter jacket": "winter jacket.html",
+      "t shirt": "tshirt.html",
+      "t-shirt": "tshirt.html",
+      "tshirt": "tshirt.html",
+      "denim jeans": "denimjeans.html",
+      "denim": "denimjeans.html",
+      "jeans": "denimjeans.html",
+       
+      // ladies
+      "saree": "saree.html",
+      "kurties": "kurties.html",
+      "lenga": "lenga bluse.html",
+      "suit": "suit and shalwar.html",
+      "western wear": "western wear.html",
+      "gown": "gown.html",
+
+     
+      
+    };
+  
+    searchInput.addEventListener("keydown", function (event) {
+      if (event.key === "Enter") {
+        const query = searchInput.value.trim().toLowerCase();
+        if (productPages[query]) {
+          window.location.href = productPages[query];
+        } else {
+          alert("No matching product page found.");
+        }
+      }
+    });
+    
+  // Initialize search for both desktop and mobile inputs
+  setupSearch('productSearch');
+  setupSearch('mobileProductSearch');
+  </script>
+
+</body>
+</html>
+
+  
+  
