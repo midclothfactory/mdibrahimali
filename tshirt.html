@@ -5,22 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mid Cloth Factory - Collection</title>
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     function toggleDropdown(id) {
+      // Close all dropdowns first
       const dropdowns = document.querySelectorAll('.dropdown');
       dropdowns.forEach(drop => {
         if (drop.id !== id) drop.classList.add('hidden');
       });
+  
+      // Toggle the selected dropdown
       const currentDropdown = document.getElementById(id);
       currentDropdown.classList.toggle('hidden');
     }
-
+  
+    // Close dropdowns on clicking outside
     window.addEventListener('click', function (e) {
       const buttons = document.querySelectorAll('button[onclick^="toggleDropdown"]');
       const isButtonClick = Array.from(buttons).some(btn => btn.contains(e.target));
+  
       if (!isButtonClick) {
-        document.querySelectorAll('.dropdown').forEach(dropdown => dropdown.classList.add('hidden'));
+        document.querySelectorAll('.dropdown').forEach(dropdown => {
+          dropdown.classList.add('hidden');
+        });
       }
     });
   </script>
@@ -28,188 +36,249 @@
 <body class="bg-gray-100">
 
   <!-- Header -->
-  <header class="w-full bg-green-600 text-white py-4 shadow-lg z-50 fixed top-0">
-    <div class="max-w-7xl mx-auto flex items-center justify-center space-x-4 px-4">
-      <img src="hoddie.jpg" alt="Logo" class="w-12 h-12 rounded-lg" />
-      <h1 class="text-2xl sm:text-4xl font-bold text-center">MID Cloth Factory</h1>
+  <header class="fixed top-100 left-100 w-full bg-green-600 text-white py-6 shadow-lg z-50">
+    <div class="max-w-7xl mx-auto flex items-center justify-center space-x-4">
+      <img src="hoddie.jpg" alt="Logo" class="w-14 h-14 rounded-lg" />
+      <h1 class="text-4xl font-bold">MID Cloth Factory</h1>
     </div>
   </header>
-
-  <!-- Spacer for fixed header -->
-  <div class="h-20 sm:h-24"></div>
+  br
+  <br>
+  <br>
+  <br>
+  <br>
 
   <!-- Navigation -->
-  <nav class="bg-black text-white py-2 shadow-md z-40 sticky top-20">
-    <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row justify-center sm:space-x-16 space-y-3 sm:space-y-0 text-center font-semibold">
-
+  <nav class="bg-black text-white shadow-md py-2 fixed top-130 left-0 w-full z-20">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-center sm:space-x-20 space-y-4 sm:space-y-0 text-center font-semibold">
+  
       <!-- Home -->
-      <a href="INDEX.html" class="text-xl sm:text-2xl font-bold hover:text-gray-300">Home</a>
-
+      <div>
+        <a href="INDEX.html" class="text-2xl font-bold hover:text-gray-300">Home</a>
+      </div>
       <!-- Men's Wear -->
-      <!-- Men's Wear -->
-<div class="relative group">
-  <a href="#" class="text-xl sm:text-2xl font-bold flex items-center gap-1 hover:text-gray-300">
-    Men's Wear <span class="text-base">▼</span>
-  </a>
-  <ul class="absolute hidden group-hover:block bg-black mt-2 rounded text-left w-48 z-50">
-    <li><a href="shirts.html" class="block px-4 py-2 hover:bg-gray-800">Shirt</a></li>
-    <li><a href="denimjeans.html" class="block px-4 py-2 hover:bg-gray-800">Denim Jeans</a></li>
-    <li><a href="style hoddie.html" class="block px-4 py-2 hover:bg-gray-800">Style Hoodie</a></li>
-    <li><a href="winter jacket.html" class="block px-4 py-2 hover:bg-gray-800">Winter Jacket</a></li>
-    <li><a href="kurta.html" class="block px-4 py-2 hover:bg-gray-800">Kurta</a></li>
-  </ul>
-</div>
+      <div class="relative">
+        
+        <button onclick="toggleDropdown('menDropdown')" class="text-2xl font-bold flex items-center gap-2 hover:text-gray-300">
+          Men's Wear <span class="text-base">▼</span>
+        </button>
+        <ul id="menDropdown" class="dropdown absolute hidden bg-black">
+          <li><a href="shirts.html" class="block px-4 py-2 hover:bg-gray-800">Shirt</a></li>
+          <li><a href="denimjeans.html" class="block px-4 py-2 hover:bg-gray-800">Denim Jeans</a></li>
+          <li><a href="style hoddie.html" class="block px-4 py-2 hover:bg-gray-800">Style Hoodie</a></li>
+          <li><a href="winter jacket.html" class="block px-4 py-2 hover:bg-gray-800">Winter Jacket</a></li>
+          <li><a href="kurta.html" class="block px-4 py-2 hover:bg-gray-800">Kurta</a></li>
+        </ul>
+      </div>
 
-<!-- Ladies Wear -->
-<div class="relative group">
-  <a href="#" class="text-xl sm:text-2xl font-bold flex items-center gap-1 hover:text-gray-300">
-    Ladies Wear <span class="text-base">▼</span>
-  </a>
-  <ul class="absolute hidden group-hover:block bg-black mt-2 rounded text-left w-48 z-50">
-    <li><a href="saree.html" class="block px-4 py-2 hover:bg-gray-800">Saree</a></li>
-    <li><a href="kurties.html" class="block px-4 py-2 hover:bg-gray-800">Kurties</a></li>
-    <li><a href="lenga bluse.html" class="block px-4 py-2 hover:bg-gray-800">Lehenga Blouse</a></li>
-    <li><a href="suit and shalwar.html" class="block px-4 py-2 hover:bg-gray-800">Suit & Shalwar</a></li>
-    <li><a href="western wear.html" class="block px-4 py-2 hover:bg-gray-800">Western Wear</a></li>
-    <li><a href="gown.html" class="block px-4 py-2 hover:bg-gray-800">Gown</a></li>
-  </ul>
-</div>
+      <!-- Ladies Wear -->
+      <div class="relative">
+        <button onclick="toggleDropdown('ladiesDropdown')" class="text-2xl font-bold flex items-center gap-2 hover:text-gray-300">
+          Ladies Wear <span class="text-base">▼</span>
+        </button>
+        <ul id="ladiesDropdown" class="dropdown absolute hidden bg-black">
+          <li><a href="saree.html" class="block px-4 py-2 hover:bg-gray-800">Saree</a></li>
+          <li><a href="kurties.html" class="block px-4 py-2 hover:bg-gray-800">Kurties</a></li>
+          <li><a href="lenga bluse.html" class="block px-4 py-2 hover:bg-gray-800">Lehenga Blouse</a></li>
+          <li><a href="suit and shalwar.html" class="block px-4 py-2 hover:bg-gray-800">Suit & Shalwar</a></li>
+          <li><a href="western wear.html" class="block px-4 py-2 hover:bg-gray-800">Western Wear</a></li>
+          <li><a href="gown.html" class="block px-4 py-2 hover:bg-gray-800">Gown</a></li>
+        </ul>
+      </div>
 
+    </div>
   </nav>
 
-  <!-- T-Shirt Collection -->
-  <main class="max-w-7xl mx-auto px-4 py-16">
-  <h2 class="text-4xl font-bold text-center text-gray-800 mb-12">T-Shirt Collection</h2>
+<!-- Optional Content Section -->
+  <div id="mobile-menu" class="md:hidden hidden px-4 pb-4 text-gray-800 dark:text-white">
+      <a href="INDEX.html" class="block py-2">Home</a>
+      <a href="car-listing (1).html" class="block py-2">Cars</a>
+      <a href="#services" class="block py-2">Offers</a>
+      <a href="contact.html" class="block py-2">Contact</a>
+        <!-- Men's Wear -->
+      <div class="relative">
+        
+        <button onclick="toggleDropdown('menDropdown')" class="text-2xl font-bold flex items-center gap-2 hover:text-gray-300">
+          Men's Wear <span class="text-base">▼</span>
+        </button>
+        <ul id="menDropdown" class="dropdown absolute hidden bg-black">
+          <li><a href="shirts.html" class="block px-4 py-2 hover:bg-gray-800">Shirt</a></li>
+          <li><a href="denimjeans.html" class="block px-4 py-2 hover:bg-gray-800">Denim Jeans</a></li>
+          <li><a href="style hoddie.html" class="block px-4 py-2 hover:bg-gray-800">Style Hoodie</a></li>
+          <li><a href="winter jacket.html" class="block px-4 py-2 hover:bg-gray-800">Winter Jacket</a></li>
+          <li><a href="kurta.html" class="block px-4 py-2 hover:bg-gray-800">Kurta</a></li>
+        </ul>
+      </div>
+
+      <!-- Ladies Wear -->
+      <div class="relative">
+        <button onclick="toggleDropdown('ladiesDropdown')" class="text-2xl font-bold flex items-center gap-2 hover:text-gray-300">
+          Ladies Wear <span class="text-base">▼</span>
+        </button>
+        <ul id="ladiesDropdown" class="dropdown absolute hidden bg-black">
+          <li><a href="saree.html" class="block px-4 py-2 hover:bg-gray-800">Saree</a></li>
+          <li><a href="kurties.html" class="block px-4 py-2 hover:bg-gray-800">Kurties</a></li>
+          <li><a href="lenga bluse.html" class="block px-4 py-2 hover:bg-gray-800">Lehenga Blouse</a></li>
+          <li><a href="suit and shalwar.html" class="block px-4 py-2 hover:bg-gray-800">Suit & Shalwar</a></li>
+          <li><a href="western wear.html" class="block px-4 py-2 hover:bg-gray-800">Western Wear</a></li>
+          <li><a href="gown.html" class="block px-4 py-2 hover:bg-gray-800">Gown</a></li>
+        </ul>
+      </div>
+    </div>
+  <!-- Rest of your page (products etc.) continues below -->
+
+  
+
+  <!-- T-Shirt Product Card Grid -->
+<div class="max-w-7xl mx-auto px-4 py-12">
+  <h1 class="text-4xl font-bold mb-10 text-center text-gray-800">Our T-Shirt Collection</h1>
+
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
 
-    <!-- Product 1 -->
-    <div class="bg-white rounded-2xl shadow hover:shadow-green-300 hover:scale-105 transition-transform">
-      <img src="classic white tee.webp" alt="Classic White Tee" class="w-full h-60 object-cover rounded-t-2xl" />
+    <!-- Card 1 -->
+    <div class="bg-white rounded-2xl shadow-lg overflow-hidden transition-transform duration-300 transform hover:scale-105 hover:shadow-green-300 hover:shadow-xl">
+      <img class="w-full h-60 object-cover" src="classic white tee.webp" alt="Classic White Tee">
       <div class="p-5">
-        <h3 class="text-xl font-bold mb-1">Classic White Tee</h3>
-        <p class="text-sm text-gray-600 mb-2">Premium cotton. Sizes: S to XXL.</p>
-        <p class="text-green-600 font-semibold text-lg mb-3">₹599</p>
-        <div class="flex gap-2">
-          <button class="w-1/2 bg-green-600 hover:bg-green-700 text-white py-2 rounded">Buy Now</button>
-          <button class="w-1/2 bg-blue-600 hover:bg-blue-700 text-white py-2 rounded">Add to Cart</button>
+        <h2 class="text-xl font-bold text-gray-800 mb-2">Classic White Tee</h2>
+        <p class="text-gray-600 text-sm mb-3">Premium cotton comfort. All sizes available.</p>
+        <div class="text-green-600 font-semibold text-lg mb-4">₹599</div>
+        <div class="flex space-x-2">
+          <button class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded w-1/2 text-sm">Buy Now</button>
+          <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded w-1/2 text-sm">Add to Cart</button>
         </div>
       </div>
     </div>
 
-    <!-- Product 2 -->
-    <div class="bg-white rounded-2xl shadow hover:shadow-green-300 hover:scale-105 transition-transform">
-      <img src="black streat .jpg" alt="Black Street Tee" class="w-full h-60 object-cover rounded-t-2xl" />
+    <!-- Card 2 -->
+    <div class="bg-white rounded-2xl shadow-lg overflow-hidden transition-transform duration-300 transform hover:scale-105 hover:shadow-green-300 hover:shadow-xl">
+      <img class="w-full h-60 object-cover" src="black streat .jpg" alt="Black Street Style">
       <div class="p-5">
-        <h3 class="text-xl font-bold mb-1">Black Street Tee</h3>
-        <p class="text-sm text-gray-600 mb-2">Urban fit. Unisex style.</p>
-        <p class="text-green-600 font-semibold text-lg mb-3">₹699</p>
-        <div class="flex gap-2">
-          <button class="w-1/2 bg-green-600 hover:bg-green-700 text-white py-2 rounded">Buy Now</button>
-          <button class="w-1/2 bg-blue-600 hover:bg-blue-700 text-white py-2 rounded">Add to Cart</button>
+        <h2 class="text-xl font-bold text-gray-800 mb-2">Black Street Style</h2>
+        <p class="text-gray-600 text-sm mb-3">Urban design with modern fit. Unisex.</p>
+        <div class="text-green-600 font-semibold text-lg mb-4">₹699</div>
+        <div class="flex space-x-2">
+          <button class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded w-1/2 text-sm">Buy Now</button>
+          <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded w-1/2 text-sm">Add to Cart</button>
         </div>
       </div>
     </div>
 
-    <!-- Product 3 -->
-    <div class="bg-white rounded-2xl shadow hover:shadow-green-300 hover:scale-105 transition-transform">
-      <img src="fashion formal tee.webp" alt="Fashion Formal Tee" class="w-full h-60 object-cover rounded-t-2xl" />
+    <!-- Card 3 -->
+    <div class="bg-white rounded-2xl shadow-lg overflow-hidden transition-transform duration-300 transform hover:scale-105 hover:shadow-green-300 hover:shadow-xl">
+      <img class="w-full h-60 object-cover" src="fashion formal tee.webp" alt="Fashion Formals Tee">
       <div class="p-5">
-        <h3 class="text-xl font-bold mb-1">Fashion Formal Tee</h3>
-        <p class="text-sm text-gray-600 mb-2">Smart casual fit. Great for office.</p>
-        <p class="text-green-600 font-semibold text-lg mb-3">₹799</p>
-        <div class="flex gap-2">
-          <button class="w-1/2 bg-green-600 hover:bg-green-700 text-white py-2 rounded">Buy Now</button>
-          <button class="w-1/2 bg-blue-600 hover:bg-blue-700 text-white py-2 rounded">Add to Cart</button>
+        <h2 class="text-xl font-bold text-gray-800 mb-2">Fashion Formals Tee</h2>
+        <p class="text-gray-600 text-sm mb-3">Smart-casual style, perfect for outings or work.</p>
+        <div class="text-green-600 font-semibold text-lg mb-4">₹799</div>
+        <div class="flex space-x-2">
+          <button class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded w-1/2 text-sm">Buy Now</button>
+          <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded w-1/2 text-sm">Add to Cart</button>
         </div>
       </div>
     </div>
 
-    <!-- Product 4 -->
-    <div class="bg-white rounded-2xl shadow hover:shadow-green-300 hover:scale-105 transition-transform">
-      <img src="graphic print tee.webp" alt="Graphic Street Tee" class="w-full h-60 object-cover rounded-t-2xl" />
+    <!-- Card 4 -->
+    <div class="bg-white rounded-2xl shadow-lg overflow-hidden transition-transform duration-300 transform hover:scale-105 hover:shadow-green-300 hover:shadow-xl">
+      <img class="w-full h-60 object-cover" src="graphic print tee.webp" alt="Graphic Print Tee">
       <div class="p-5">
-        <h3 class="text-xl font-bold mb-1">Graphic print Tee</h3>
-        <p class="text-sm text-gray-600 mb-2">Bold print. Oversized fit.</p>
-        <p class="text-green-600 font-semibold text-lg mb-3">₹849</p>
-        <div class="flex gap-2">
-          <button class="w-1/2 bg-green-600 hover:bg-green-700 text-white py-2 rounded">Buy Now</button>
-          <button class="w-1/2 bg-blue-600 hover:bg-blue-700 text-white py-2 rounded">Add to Cart</button>
+        <h2 class="text-xl font-bold text-gray-800 mb-2">Graphic Print Tee</h2>
+        <p class="text-gray-600 text-sm mb-3">Bold designs, 100% cotton comfort.</p>
+        <div class="text-green-600 font-semibold text-lg mb-4">₹699</div>
+        <div class="flex space-x-2">
+          <button class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded w-1/2 text-sm">Buy Now</button>
+          <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded w-1/2 text-sm">Add to Cart</button>
         </div>
       </div>
     </div>
 
-    <!-- Product 5 -->
-    <div class="bg-white rounded-2xl shadow hover:shadow-green-300 hover:scale-105 transition-transform">
-      <img src="oversize black tee.webp" alt="Active Sports Tee" class="w-full h-60 object-cover rounded-t-2xl" />
+    <!-- Card 5 -->
+    <div class="bg-white rounded-2xl shadow-lg overflow-hidden transition-transform duration-300 transform hover:scale-105 hover:shadow-green-300 hover:shadow-xl">
+      <img class="w-full h-60 object-cover" src="oversize black tee.webp" alt="Oversized Black Tee">
       <div class="p-5">
-        <h3 class="text-xl font-bold mb-1">oversize black tee</h3>
-        <p class="text-sm text-gray-600 mb-2">Breathable dry-fit. Ideal for gym.</p>
-        <p class="text-green-600 font-semibold text-lg mb-3">₹549</p>
-        <div class="flex gap-2">
-          <button class="w-1/2 bg-green-600 hover:bg-green-700 text-white py-2 rounded">Buy Now</button>
-          <button class="w-1/2 bg-blue-600 hover:bg-blue-700 text-white py-2 rounded">Add to Cart</button>
+        <h2 class="text-xl font-bold text-gray-800 mb-2">Oversized Black Tee</h2>
+        <p class="text-gray-600 text-sm mb-3">Relaxed fit streetwear. Ultra-soft material.</p>
+        <div class="text-green-600 font-semibold text-lg mb-4">₹749</div>
+        <div class="flex space-x-2">
+          <button class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded w-1/2 text-sm">Buy Now</button>
+          <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded w-1/2 text-sm">Add to Cart</button>
         </div>
       </div>
     </div>
 
-    <!-- Product 6 -->
-    <div class="bg-white rounded-2xl shadow hover:shadow-green-300 hover:scale-105 transition-transform">
-      <img src="minimalist line tee.jpg" alt="Vintage Washed Tee" class="w-full h-60 object-cover rounded-t-2xl" />
+    <!-- Card 6 -->
+    <div class="bg-white rounded-2xl shadow-lg overflow-hidden transition-transform duration-300 transform hover:scale-105 hover:shadow-green-300 hover:shadow-xl">
+      <img class="w-full h-60 object-cover" src="minimalist line tee.jpg" alt="Minimalist Line Tee">
       <div class="p-5">
-        <h3 class="text-xl font-bold mb-1">minimalist line tee</h3>
-        <p class="text-sm text-gray-600 mb-2">Soft wash. Retro vibes.</p>
-        <p class="text-green-600 font-semibold text-lg mb-3">₹749</p>
-        <div class="flex gap-2">
-          <button class="w-1/2 bg-green-600 hover:bg-green-700 text-white py-2 rounded">Buy Now</button>
-          <button class="w-1/2 bg-blue-600 hover:bg-blue-700 text-white py-2 rounded">Add to Cart</button>
+        <h2 class="text-xl font-bold text-gray-800 mb-2">Minimalist Line Tee</h2>
+        <p class="text-gray-600 text-sm mb-3">Subtle design, high-quality stitch.</p>
+        <div class="text-green-600 font-semibold text-lg mb-4">₹649</div>
+        <div class="flex space-x-2">
+          <button class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded w-1/2 text-sm">Buy Now</button>
+          <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded w-1/2 text-sm">Add to Cart</button>
         </div>
       </div>
     </div>
 
-      <!-- Repeat the above card block with appropriate content -->
+  </div>
+</div>
 
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-black text-white py-6 mt-10">
-    <div class="max-w-7xl mx-auto text-center px-4">
+<!-- Footer -->
+<footer class="bg-black text-white py-6 mt-10">
+    <div class="max-w-7xl mx-auto text-center">
       <p class="text-sm">&copy; 2025 Mid Cloth Factory. All rights reserved.</p>
       <p class="text-xs mt-1">Follow us on Instagram | Facebook | Twitter</p>
     </div>
   </footer>
 
-  <!-- Add functionality (optional) -->
-  <script>
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
+  <script>
+// mobile toggle
+        document.getElementById('menu-toggle').addEventListener('click', () => {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+
+    document.getElementById('darkToggle').addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+    });
+    // Dummy data template for reference
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  
+    // Utility function to add to cart
     function addToCart(item) {
       cart.push(item);
       localStorage.setItem('cart', JSON.stringify(cart));
       alert(`${item.name} has been added to your cart!`);
     }
-
+  
+    // Utility function for buy now
     function buyNow(item) {
       localStorage.setItem('buyNowItem', JSON.stringify(item));
       alert(`Proceeding to checkout for ${item.name}`);
-      window.location.href = "checkout.html";
+      // Redirect to dummy checkout page
+      window.location.href = "checkout.html";  // Create this page later
     }
-
+  
+    // Attach events after DOM is loaded
     document.addEventListener("DOMContentLoaded", function () {
       const cards = document.querySelectorAll(".bg-white");
+  
       cards.forEach((card) => {
-        const name = card.querySelector("h3").innerText;
+        const name = card.querySelector("h2").innerText;
         const price = card.querySelector(".text-green-600").innerText;
-        const image = card.querySelector("img").src;
-
+        const image = card.querySelector("img").getAttribute("src");
+  
         const item = { name, price, image };
-
-        const buttons = card.querySelectorAll("button");
-        buttons[0].addEventListener("click", () => buyNow(item));
-        buttons[1].addEventListener("click", () => addToCart(item));
+  
+        const buyBtn = card.querySelector("button:nth-child(1)");
+        const cartBtn = card.querySelector("button:nth-child(2)");
+  
+        buyBtn.addEventListener("click", () => buyNow(item));
+        cartBtn.addEventListener("click", () => addToCart(item));
       });
     });
   </script>
+  
 
+  
 </body>
 </html>
